@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Chrome testing(failed)" verbose="0">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="kubedemo.Googlepage">
+        <methods>
+          <include name="verifyfacebookpage"/>
+          <include name="opendriver"/>
+          <include name="verifygooglepage"/>
+        </methods>
+      </class> <!-- kubedemo.Googlepage -->
+    </classes>
+  </test> <!-- Chrome testing(failed) -->
+  <test thread-count="5" name="FireFox testing(failed)" verbose="0">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="kubedemo.Googlepage">
+        <methods>
+          <include name="verifyfacebookpage"/>
+          <include name="opendriver"/>
+          <include name="verifygooglepage"/>
+        </methods>
+      </class> <!-- kubedemo.Googlepage -->
+    </classes>
+  </test> <!-- FireFox testing(failed) -->
+</suite> <!-- Failed suite [Suite] -->
