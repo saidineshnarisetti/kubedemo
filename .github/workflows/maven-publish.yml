@@ -37,8 +37,20 @@ jobs:
       run: |
         kubectl get pods
         kubectl get service selenium-hub
+
     - name: Wait for Selenium Hub pod to be Running
       run: kubectl wait --for=condition=Ready pod -l app=selenium-hub --timeout=300s
+
     - name: Selenium HUB url
       run: minikube service selenium-hub –-url
+    
+    - name: Expose Selenium Hub services
+      id: expose_hub
+      run: |
+        urls=$(minikube service selenium-hub --url | grep -oP 'http://\S+')
+        echo "::set-output name=selenium_hub_urls::$urls"
+
+outputs:
+    selenium_hub_urls: ${{ needs.expose_hub.outputs.selenium_hub_urls }}
+    
 
