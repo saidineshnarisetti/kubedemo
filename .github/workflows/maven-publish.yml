@@ -19,10 +19,11 @@ jobs:
         minikube addons enable ingress
         minikube addons enable ingress-dns
         minikube status
-    - name: Install kubectl
-      run: |
-        sudo apt-get update -q
-        sudo apt-get install -y kubectl
+        sleep 60
+    - name: Configure kubectl
+      run: kubectl config use-context minikube
+    - name: Allow GitHub Actions to access Minikube
+      run: sudo usermod -aG docker $USER && newgrp docker
 
   deploy_hub:
     runs-on: ubuntu-latest
