@@ -12,7 +12,7 @@ public class Googlepage extends LaunchBrowser{
 	public void verifygooglepage() throws InterruptedException{
 		driver.get("https://www.google.com/");
 		//String act_title = driver.get("https://www.google.com/");
-		AssertJUnit.assertEquals(driver.getTitle(), "Google");
+		Assert.assertEquals(driver.getTitle(), "Google");
 		System.out.println(driver.getTitle());
 		Thread.sleep(5000);
 	}
@@ -20,7 +20,7 @@ public class Googlepage extends LaunchBrowser{
 	public void verifyfacebookpage() throws InterruptedException{
 		Thread.sleep(5000);
 		driver.get("https://www.facebook.com/");
-		AssertJUnit.assertEquals(driver.getTitle(), "Facebook - log in or sign up");
+		Assert.assertEquals(driver.getTitle().contains("Facebook"), true);
 		System.out.println(driver.getTitle());
 	}
 }

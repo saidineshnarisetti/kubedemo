@@ -21,19 +21,19 @@ public class LaunchBrowser {
 		System.out.println("browser passed as :- " + browser);
 		if(browser.equalsIgnoreCase("Chrome")) {
 			ChromeOptions options = new ChromeOptions();
-			URL u=new URL("http://127.0.0.1:51333/wd/hub");
+			URL u=new URL("http://127.0.0.1:53908/wd/hub");
 			//URL u=new URL("http://localhost:4441/wd/hub");
 			driver = new RemoteWebDriver (u,options);	
 		}
 		if(browser.equalsIgnoreCase("firefox")) {
 			FirefoxOptions foptions =new FirefoxOptions();
-			URL u=new URL("http://127.0.0.1:51333/wd/hub");
+			URL u=new URL("http://127.0.0.1:53908/wd/hub");
 			//URL u=new URL("http://localhost:4442/wd/hub");
 			driver = new RemoteWebDriver(u,foptions);	
 			}
 		if(browser.equalsIgnoreCase("Edge")) {
 			EdgeOptions Eoptions =new EdgeOptions();
-			URL u=new URL("http://127.0.0.1:51333/wd/hub");
+			URL u=new URL("http://127.0.0.1:53908/wd/hub");
 			//URL u=new URL("http://localhost:4442/wd/hub");
 			driver = new RemoteWebDriver(u,Eoptions);	
 			}
