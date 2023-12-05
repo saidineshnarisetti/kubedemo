@@ -49,8 +49,5 @@ jobs:
       run: |
         urls=$(minikube service selenium-hub --url | grep -oP 'http://\S+')
         echo "::set-output name=selenium_hub_urls::$urls"
-
-outputs:
-    selenium_hub_urls: ${{ needs.expose_hub.outputs.selenium_hub_urls }}
     
 
