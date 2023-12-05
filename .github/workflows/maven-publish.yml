@@ -14,14 +14,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Set up Minikube
-      run: minikube start --driver=docker
-    - name: Configure Kubernetes Context
-      run: minikube kubectl -- config use-context minikube
-    # - name: Wait for Kubernetes
-    #   run: |
-    #     kubectl wait --for=condition=Ready node --all --timeout=5m
-    #     kubectl wait --for=condition=Ready pod --all --timeout=5m
-
+      run: |
+        minikube start --driver=docker
+        minikube addons enable ingress
+        minikube addons enable ingress-dns
+        minikube status
+    - name: Install kubectl
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -y kubectl
 
   deploy_hub:
     runs-on: ubuntu-latest
