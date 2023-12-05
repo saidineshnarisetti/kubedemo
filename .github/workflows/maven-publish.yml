@@ -1,0 +1,58 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+name: Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy Selenium Hub
+        run: kubectl apply -f selenium-hub-deployment.yaml
+
+  deploy_hub_svc:
+    needs: deploy_hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy Selenium Hub Service
+        run: kubectl apply -f selenium-hub-svc.yaml
+
+  deploy_node_chrome:
+    needs: deploy_hub_svc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy Selenium Chrome Node
+        run: kubectl apply -f selenium-node-chrome-deployment.yaml
+
+  deploy_node_firefox:
+    needs: deploy_node_chrome
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy Selenium Firefox Node
+        run: kubectl apply -f selenium-node-firefox-deployment.yaml
+
+  run_tests:
+    needs: deploy_node_firefox
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run Tests
+        run: mvn test
