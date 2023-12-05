@@ -14,7 +14,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Set up Minikube
-      run: minikube start
+      run: minikube start --driver=docker
+    - name: Configure Kubernetes Context
+      run: minikube kubectl -- config use-context minikube
+    - name: Wait for Kubernetes
+      run: |
+        kubectl wait --for=condition=Ready node --all --timeout=5m
+        kubectl wait --for=condition=Ready pod --all --timeout=5m
 
 
   deploy_hub:
