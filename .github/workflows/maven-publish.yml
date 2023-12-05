@@ -33,4 +33,6 @@ jobs:
     
     - name: Deploy Selenium Firefox Node
       run: kubectl apply -f selenium-node-firefox-deployment.yaml
+    - name: Selenium HUB url
+      run: minikube service selenium-hub –-url
 
