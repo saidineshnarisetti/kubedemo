@@ -24,3 +24,13 @@ jobs:
 
     - name: Deploy Selenium Hub
       run: kubectl apply -f selenium-hub-deployment.yaml
+    
+    - name: Deploy Selenium Hub Service
+      run: kubectl apply -f selenium-hub-svc.yaml
+    
+    - name: Deploy Selenium Chrome Node
+      run: kubectl apply -f selenium-node-chrome-deployment.yaml
+    
+    - name: Deploy Selenium Firefox Node
+      run: kubectl apply -f selenium-node-firefox-deployment.yaml
+
