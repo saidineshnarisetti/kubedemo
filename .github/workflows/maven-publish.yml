@@ -57,7 +57,10 @@ jobs:
           uses: actions/checkout@v2
   
         - name: Set up Selenium Hub URL
-          run: echo "selenium.hub.url=${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}" >> selenium.properties
+          run: |
+            echo "selenium.hub.url=${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}" >> selenium.properties
+            cat selenium.properties
+          
   
         - name: Run Tests
           run: mvn clean test
