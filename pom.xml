@@ -7,6 +7,7 @@
   		<jre.level>1.8</jre.level>
   		<jdk.level>1.8</jdk.level>
 		<selenium.properties.file>selenium.properties</selenium.properties.file>
+		<selenium.hub.url>${selenium.hub.url}</selenium.hub.url>
 </properties>
 <build>
    <!--  <sourceDirectory>src</sourceDirectory> -->

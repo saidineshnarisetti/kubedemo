@@ -15,11 +15,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class LaunchBrowser {
 	public static RemoteWebDriver driver=null;
-	@Parameters({ "browser" }) // Used TestNg parameterization concept 
+	@Parameters({ "browser", "seleniumHubUrl" }) // Used TestNg parameterization concept 
 	@BeforeClass 
 	public void opendriver(String browser, String seleniumHubUrl)  throws MalformedURLException { 
 		System.out.println("browser passed as :- " + browser);
-		System.out.println("url :"+ seleniumHubUrl);
+		System.out.println("Selenium Hub URL: :"+ seleniumHubUrl);
 		if(browser.equalsIgnoreCase("Chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			//URL u=new URL("http://127.0.0.1:53908/wd/hub");
