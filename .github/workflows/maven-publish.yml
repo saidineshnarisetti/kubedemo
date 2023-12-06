@@ -47,8 +47,8 @@ jobs:
         echo "Test Dinesh"
         selenium_hub_urls=$(cat temp.txt | awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]')
         echo "$selenium_hub_urls"
-        echo "selenium_hub_url=$url" >> selenium.properties
-        echo "selenium_hub_url=$url" >> $GITHUB_ENV
+        echo "selenium_hub_urls=$url" >> selenium.properties
+        echo "selenium_hub_urls=$url" >> $GITHUB_ENV
   run_tests:
       needs: deploy_selenium_hub
       runs-on: ubuntu-latest
@@ -60,6 +60,5 @@ jobs:
           run: |
             cat selenium.properties
           
-  
         - name: Run Tests
           run: mvn clean test
