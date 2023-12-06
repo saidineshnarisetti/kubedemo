@@ -45,29 +45,7 @@ jobs:
       run: |
         minikube service selenium-hub –-url >> temp.txt
         echo "Test Dinesh"
-        url=$(cat temp.txt | awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]')
-        echo "$url"
-  
-  # # run_tests:
-  #     needs: deploy_selenium_hub
-  #     runs-on: ubuntu-latest
-  #     steps:
-  #       - name: Checkout Repository
-  #         uses: actions/checkout@v2
-
-  #       - name: Set up Minikube
-  #         run: |
-  #           minikube start --driver=docker
-  #           minikube addons enable ingress
-  #           minikube addons enable ingress-dns
-  #           minikube status
-
-  #       - name: Configure kubectl
-  #         run: kubectl config use-context minikube
-
-  #       - name: Get Selenium HUB URL
-  #         id: get_hub_url
-  #         run: echo "Selenium Hub URL is ${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}"
-
-  #       - name: Run Tests
-  #         run: mvn test -DhubUrl=${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}
+        selenium_hub_urls=$(cat temp.txt | awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]')
+        echo "$selenium_hub_urls"
+        echo "selenium_hub_url=$url" >> selenium.properties
+        echo "selenium_hub_url=$url" >> $GITHUB_ENV
