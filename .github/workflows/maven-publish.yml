@@ -58,7 +58,7 @@ jobs:
   
         - name: Set up Selenium Hub URL
           run: |
-            echo "selenium.hub.url=${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}" >> selenium.properties
+            # echo "selenium.hub.url=${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}" >> selenium.properties
             cat selenium.properties
           
   
