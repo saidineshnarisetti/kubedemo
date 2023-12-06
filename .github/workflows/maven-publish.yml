@@ -43,10 +43,10 @@ jobs:
 
     - name: Selenium HUB url
       run: |
-        minikube service selenium-hub –-url
+        minikube service selenium-hub –-url >> temp.txt
         echo "Test Dinesh"
-        echo "$(minikube service selenium-hub --url | awk '/port2\/4442/ {print $(NF-1)}')"
-
+        cat temp.txt |  awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]'
+        
     - name: Expose Selenium Hub services
       id: expose_hub
       run: |
