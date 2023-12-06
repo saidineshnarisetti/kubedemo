@@ -42,8 +42,10 @@ jobs:
       run: kubectl wait --for=condition=Ready pod -l app=selenium-hub --timeout=300s
 
     - name: Selenium HUB url
-      run: minikube service selenium-hub –-url
-    
+      run: |
+        minikube service selenium-hub –-url
+        minikube service selenium-hub --url | grep 'port0/4444' | awk '{print $NF}'
+
     - name: Expose Selenium Hub services
       id: expose_hub
       run: |
