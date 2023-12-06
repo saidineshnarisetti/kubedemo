@@ -6,6 +6,7 @@
 <properties>
   		<jre.level>1.8</jre.level>
   		<jdk.level>1.8</jdk.level>
+		<selenium.properties.file>selenium.properties</selenium.properties.file>
 </properties>
 <build>
    <!--  <sourceDirectory>src</sourceDirectory> -->
@@ -29,6 +30,15 @@
           	</suiteXmlFiles>
           	</configuration>
 	</plugin>
+	 <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <configuration>
+        <systemPropertyVariables>
+          <selenium.hub.url>${selenium.hub.url}</selenium.hub.url>
+        </systemPropertyVariables>
+      </configuration>
+    </plugin>
     </plugins>
   </build>
 <dependencies>
