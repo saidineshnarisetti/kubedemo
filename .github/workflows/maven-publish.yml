@@ -49,3 +49,15 @@ jobs:
         echo "$selenium_hub_urls"
         echo "selenium_hub_url=$url" >> selenium.properties
         echo "selenium_hub_url=$url" >> $GITHUB_ENV
+  run_tests:
+      needs: deploy_selenium_hub
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v2
+  
+        - name: Set up Selenium Hub URL
+          run: echo "selenium.hub.url=${{ needs.deploy_selenium_hub.outputs.selenium_hub_url }}" >> selenium.properties
+  
+        - name: Run Tests
+          run: mvn clean test
