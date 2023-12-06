@@ -43,7 +43,6 @@ jobs:
 
     - name: Selenium HUB url
       run: |
-        minikube service selenium-hub –-url
         minikube service selenium-hub --url | grep 'port0/4444' | awk '{print $NF}'
 
     - name: Expose Selenium Hub services
