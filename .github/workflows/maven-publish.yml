@@ -44,7 +44,8 @@ jobs:
     - name: Selenium HUB url
       run: |
         minikube service selenium-hub –-url
-        grep 'port0/4444' | awk '{print $NF}'
+        echo "Test Dinesh"
+        minikube service selenium-hub --url | awk '/port2\/4442/ {getline; print $NF}'
 
     - name: Expose Selenium Hub services
       id: expose_hub
