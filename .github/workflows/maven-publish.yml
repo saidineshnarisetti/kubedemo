@@ -45,10 +45,10 @@ jobs:
       run: |
         minikube service selenium-hub –-url >> temp.txt
         echo "Test Dinesh"
-        selenium_hub_urls=$(cat temp.txt | awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]')
-        echo "$selenium_hub_urls"
-        echo "selenium_hub_urls=$url" >> selenium.properties
-        echo "selenium_hub_urls=$url" >> $GITHUB_ENV
+        selenium_hub_url=$(cat temp.txt | awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]')
+        echo "$selenium_hub_url"
+        cat "selenium_hub_url" >> selenium.properties
+        cat "selenium_hub_url" >> $GITHUB_ENV
     - name: Set up Selenium Hub URL
       run: cat selenium.properties
         
