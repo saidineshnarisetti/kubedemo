@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
  <test name="Chrome testing">
-  <parameter name="seleniumHubUrl" value="${selenium.hub.url}"/>
+  <parameter name="seleniumHubUrl" value="${selenium_hub_url}"/>
   <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="kubedemo.LaunchBrowser"/>
@@ -11,7 +11,7 @@
   </test>  
   <test name="FireFox testing">
   <parameter name="browser" value="Firefox"/>
-   <parameter name="seleniumHubUrl" value="${selenium.hub.url}"/>
+   <parameter name="seleniumHubUrl" value="${selenium_hub_url}"/>
     <classes>
       <class name="kubedemo.LaunchBrowser"/>
       <class name="kubedemo.Googlepage"/>
