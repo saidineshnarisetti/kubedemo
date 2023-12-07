@@ -18,8 +18,8 @@ public class LaunchBrowser {
     @Parameters({ "browser", "seleniumHubUrl" })
     @BeforeClass
     public void openDriver(String browser, String seleniumHubUrl) throws MalformedURLException {
-        System.out.println("Browser passed as: " + browser);
-        System.out.println("Selenium Hub URL: " + seleniumHubUrl);
+		System.out.println("Browser passed as: " + browser);
+		System.out.println("Selenium Hub URL: " + seleniumHubUrl);
 
         if (browser.equalsIgnoreCase("Chrome")) {
             ChromeOptions options = new ChromeOptions();
