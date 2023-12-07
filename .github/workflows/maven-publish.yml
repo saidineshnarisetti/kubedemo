@@ -49,7 +49,9 @@ jobs:
         echo "$selenium_hub_url"
 
     - name: Set up Selenium Hub URL
-      run: echo "$selenium_hub_url" > selenium.properties
+      run: |
+        echo "$selenium_hub_url" > selenium.properties
+        cat selenium.properties
       
         
     - name: Run Tests
