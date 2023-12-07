@@ -47,12 +47,8 @@ jobs:
         echo "Test Dinesh"
         selenium_hub_url=$(cat temp.txt | awk '/port2\/4442/ {print $(NF)}' | tr -d '|[:space:]')
         echo "$selenium_hub_url"
-
-    - name: Set up Selenium Hub URL
-      run: |
         echo "$selenium_hub_url" > selenium.properties
         cat selenium.properties
-      
-        
+              
     - name: Run Tests
       run: mvn clean test -Dselenium_hub_url=$selenium_hub_url
