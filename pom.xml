@@ -6,8 +6,8 @@
 <properties>
   		<jre.level>1.8</jre.level>
   		<jdk.level>1.8</jdk.level>
-		<selenium.properties.file>selenium_hub_url</selenium.properties.file>
-		<!-- <selenium.hub.url>${selenium.hub.url}</selenium.hub.url> -->
+		<!-- <selenium.properties.file>selenium_hub_url</selenium.properties.file> -->
+		<selenium_hub_url>${selenium.hub.url}</selenium_hub_url>
 </properties>
 <build>
    <!--  <sourceDirectory>src</sourceDirectory> -->
@@ -39,6 +39,32 @@
           	</suiteXmlFiles>
           	</configuration>
 	</plugin>
+	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>filter-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}</directory>
+                                    <includes>
+                                        <include>selenium.properties</include>
+                                    </includes>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
     </plugins>
   </build>
 <dependencies>
