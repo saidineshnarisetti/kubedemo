@@ -55,4 +55,4 @@ jobs:
       run: echo selenium.properties
         
     - name: Run Tests
-      run: mvn clean test
+      run: mvn clean test -Dselenium_hub_url=${selenium_hub_url}
