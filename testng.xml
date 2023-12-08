@@ -17,4 +17,12 @@
       <class name="kubedemo.Googlepage"/>
     </classes>
   </test> 
+   <test name="Edge testing">
+  <parameter name="browser" value="Edge"/>
+   <parameter name="seleniumHubUrl" value="${selenium_hub_url}"/>
+    <classes>
+      <class name="kubedemo.LaunchBrowser"/>
+      <class name="kubedemo.Googlepage"/>
+    </classes>
+  </test> 
 </suite> <!-- Suite -->

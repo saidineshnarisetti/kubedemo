@@ -34,6 +34,8 @@ jobs:
     
     - name: Deploy Selenium Firefox Node
       run: kubectl apply -f selenium-node-firefox-deployment.yaml
+    - name: Deploy Selenium Edge Node
+      run: kubectl apply -f selenium-node-edge-deployment.yaml
     - name: Get pods
       run: |
         kubectl get pods
