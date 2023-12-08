@@ -58,3 +58,11 @@ jobs:
       with:
         name: TestNG Report
         path: ./target/surefire-reports/emailable-report.html
+    - name: Teardown 
+      run: | 
+        rm temp.txt
+        kubectl delete deployment selenium-hub 
+        kubectl delete service selenium-hub 
+        kubectl delete deployment selenium-node-chrome
+        kubectl delete deployment selenium-node-firefox
+        kubectl delete deployment  selenium-node-edge

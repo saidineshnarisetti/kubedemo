@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-08T12:53:45 IST" name="Suite" finished-at="2023-12-08T12:55:25 IST" duration-ms="100284">
+  <suite started-at="2023-12-08T14:39:29 IST" name="Suite" finished-at="2023-12-08T14:42:20 IST" duration-ms="171052">
     <groups>
     </groups>
-    <test started-at="2023-12-08T12:53:45 IST" name="Chrome testing" finished-at="2023-12-08T12:54:07 IST" duration-ms="21907">
+    <test started-at="2023-12-08T14:39:29 IST" name="Chrome testing" finished-at="2023-12-08T14:40:14 IST" duration-ms="45550">
       <class name="kubedemo.Googlepage">
-        <test-method is-config="true" signature="openDriver(java.lang.String,java.lang.String)[pri:0, instance:kubedemo.Googlepage@551bdc27]" started-at="2023-12-08T12:53:45 IST" name="openDriver" finished-at="2023-12-08T12:53:50 IST" duration-ms="4836" status="PASS">
+        <test-method is-config="true" signature="openDriver(java.lang.String,java.lang.String)[pri:0, instance:kubedemo.Googlepage@551bdc27]" started-at="2023-12-08T14:39:29 IST" name="openDriver" finished-at="2023-12-08T14:39:37 IST" duration-ms="8487" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,19 +23,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openDriver -->
-        <test-method signature="verifygooglepage()[pri:1, instance:kubedemo.Googlepage@551bdc27]" started-at="2023-12-08T12:53:50 IST" name="verifygooglepage" finished-at="2023-12-08T12:53:59 IST" duration-ms="9745" status="PASS">
+        <test-method signature="verifygooglepage()[pri:1, instance:kubedemo.Googlepage@551bdc27]" started-at="2023-12-08T14:39:37 IST" name="verifygooglepage" finished-at="2023-12-08T14:39:56 IST" duration-ms="18851" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifygooglepage -->
-        <test-method signature="verifyfacebookpage()[pri:2, instance:kubedemo.Googlepage@551bdc27]" started-at="2023-12-08T12:53:59 IST" name="verifyfacebookpage" finished-at="2023-12-08T12:54:07 IST" depends-on-methods="kubedemo.Googlepage.verifygooglepage" duration-ms="7294" status="PASS">
+        <test-method signature="verifyfacebookpage()[pri:2, instance:kubedemo.Googlepage@551bdc27]" started-at="2023-12-08T14:39:56 IST" name="verifyfacebookpage" finished-at="2023-12-08T14:40:14 IST" depends-on-methods="kubedemo.Googlepage.verifygooglepage" duration-ms="18183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyfacebookpage -->
       </class> <!-- kubedemo.Googlepage -->
     </test> <!-- Chrome testing -->
-    <test started-at="2023-12-08T12:54:12 IST" name="FireFox testing" finished-at="2023-12-08T12:54:52 IST" duration-ms="40124">
+    <test started-at="2023-12-08T14:40:19 IST" name="FireFox testing" finished-at="2023-12-08T14:41:14 IST" duration-ms="54754">
       <class name="kubedemo.Googlepage">
-        <test-method is-config="true" signature="openDriver(java.lang.String,java.lang.String)[pri:0, instance:kubedemo.Googlepage@1a052a00]" started-at="2023-12-08T12:54:12 IST" name="openDriver" finished-at="2023-12-08T12:54:30 IST" duration-ms="18349" status="PASS">
+        <test-method is-config="true" signature="openDriver(java.lang.String,java.lang.String)[pri:0, instance:kubedemo.Googlepage@1a052a00]" started-at="2023-12-08T14:40:19 IST" name="openDriver" finished-at="2023-12-08T14:40:39 IST" duration-ms="20288" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,19 +51,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openDriver -->
-        <test-method signature="verifygooglepage()[pri:1, instance:kubedemo.Googlepage@1a052a00]" started-at="2023-12-08T12:54:30 IST" name="verifygooglepage" finished-at="2023-12-08T12:54:42 IST" duration-ms="12139" status="PASS">
+        <test-method signature="verifygooglepage()[pri:1, instance:kubedemo.Googlepage@1a052a00]" started-at="2023-12-08T14:40:39 IST" name="verifygooglepage" finished-at="2023-12-08T14:40:59 IST" duration-ms="19188" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifygooglepage -->
-        <test-method signature="verifyfacebookpage()[pri:2, instance:kubedemo.Googlepage@1a052a00]" started-at="2023-12-08T12:54:42 IST" name="verifyfacebookpage" finished-at="2023-12-08T12:54:52 IST" depends-on-methods="kubedemo.Googlepage.verifygooglepage" duration-ms="9634" status="PASS">
+        <test-method signature="verifyfacebookpage()[pri:2, instance:kubedemo.Googlepage@1a052a00]" started-at="2023-12-08T14:40:59 IST" name="verifyfacebookpage" finished-at="2023-12-08T14:41:14 IST" depends-on-methods="kubedemo.Googlepage.verifygooglepage" duration-ms="15270" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyfacebookpage -->
       </class> <!-- kubedemo.Googlepage -->
     </test> <!-- FireFox testing -->
-    <test started-at="2023-12-08T12:54:57 IST" name="Edge testing" finished-at="2023-12-08T12:55:25 IST" duration-ms="28188">
+    <test started-at="2023-12-08T14:41:19 IST" name="Edge testing" finished-at="2023-12-08T14:42:20 IST" duration-ms="60692">
       <class name="kubedemo.Googlepage">
-        <test-method is-config="true" signature="openDriver(java.lang.String,java.lang.String)[pri:0, instance:kubedemo.Googlepage@7f77e91b]" started-at="2023-12-08T12:54:57 IST" name="openDriver" finished-at="2023-12-08T12:55:02 IST" duration-ms="5494" status="PASS">
+        <test-method is-config="true" signature="openDriver(java.lang.String,java.lang.String)[pri:0, instance:kubedemo.Googlepage@7f77e91b]" started-at="2023-12-08T14:41:19 IST" name="openDriver" finished-at="2023-12-08T14:41:37 IST" duration-ms="18206" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -79,11 +79,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openDriver -->
-        <test-method signature="verifygooglepage()[pri:1, instance:kubedemo.Googlepage@7f77e91b]" started-at="2023-12-08T12:55:02 IST" name="verifygooglepage" finished-at="2023-12-08T12:55:12 IST" duration-ms="9700" status="PASS">
+        <test-method signature="verifygooglepage()[pri:1, instance:kubedemo.Googlepage@7f77e91b]" started-at="2023-12-08T14:41:37 IST" name="verifygooglepage" finished-at="2023-12-08T14:41:59 IST" duration-ms="22090" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifygooglepage -->
-        <test-method signature="verifyfacebookpage()[pri:2, instance:kubedemo.Googlepage@7f77e91b]" started-at="2023-12-08T12:55:12 IST" name="verifyfacebookpage" finished-at="2023-12-08T12:55:25 IST" depends-on-methods="kubedemo.Googlepage.verifygooglepage" duration-ms="12991" status="PASS">
+        <test-method signature="verifyfacebookpage()[pri:2, instance:kubedemo.Googlepage@7f77e91b]" started-at="2023-12-08T14:41:59 IST" name="verifyfacebookpage" finished-at="2023-12-08T14:42:20 IST" depends-on-methods="kubedemo.Googlepage.verifygooglepage" duration-ms="20392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyfacebookpage -->
