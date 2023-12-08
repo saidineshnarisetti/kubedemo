@@ -56,7 +56,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -110,6 +110,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="kubedemo.Googlepage" class="method navigator-link" hash-for-method="verifyfacebookpage">verifyfacebookpage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="kubedemo.Googlepage" class="method navigator-link" hash-for-method="verifyfacebookpage">verifyfacebookpage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="kubedemo.Googlepage" class="method navigator-link" hash-for-method="verifygooglepage">verifygooglepage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -156,6 +166,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="verifyfacebookpage">
+                  </a> <!-- verifyfacebookpage -->
+                  <span class="method-name">verifyfacebookpage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifygooglepage">
+                  </a> <!-- verifygooglepage -->
+                  <span class="method-name">verifygooglepage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="verifygooglepage">
                   </a> <!-- verifygooglepage -->
                   <span class="method-name">verifygooglepage</span>
@@ -181,6 +205,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Chrome testing&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;seleniumHubUrl&quot; value=&quot;http://127.0.0.1:60628&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;kubedemo.LaunchBrowser&quot;/&gt;
@@ -188,12 +213,21 @@
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Chrome testing --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;FireFox testing&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;seleniumHubUrl&quot; value=&quot;http://127.0.0.1:60628&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Firefox&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;kubedemo.LaunchBrowser&quot;/&gt;
       &lt;class name=&quot;kubedemo.Googlepage&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- FireFox testing --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Edge testing&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;seleniumHubUrl&quot; value=&quot;http://127.0.0.1:60628&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;Edge&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;kubedemo.LaunchBrowser&quot;/&gt;
+      &lt;class name=&quot;kubedemo.Googlepage&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Edge testing --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -209,6 +243,9 @@
               </li>
               <li>
                 <span class="test-name">FireFox testing (2 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">Edge testing (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -234,28 +271,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifygooglepage')
+data.setCell(0, 1, 'verifyfacebookpage')
 data.setCell(0, 2, 'kubedemo.Googlepage')
-data.setCell(0, 3, 11396);
+data.setCell(0, 3, 12991);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifygooglepage')
 data.setCell(1, 2, 'kubedemo.Googlepage')
-data.setCell(1, 3, 10330);
+data.setCell(1, 3, 12139);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyfacebookpage')
+data.setCell(2, 1, 'verifygooglepage')
 data.setCell(2, 2, 'kubedemo.Googlepage')
-data.setCell(2, 3, 9300);
+data.setCell(2, 3, 9745);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyfacebookpage')
+data.setCell(3, 1, 'verifygooglepage')
 data.setCell(3, 2, 'kubedemo.Googlepage')
-data.setCell(3, 3, 7009);
+data.setCell(3, 3, 9700);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyfacebookpage')
+data.setCell(4, 2, 'kubedemo.Googlepage')
+data.setCell(4, 3, 9634);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyfacebookpage')
+data.setCell(5, 2, 'kubedemo.Googlepage')
+data.setCell(5, 3, 7294);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 38 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -283,28 +328,40 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">kubedemo.Googlepage</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">opendriver(Chrome)</span>
+                <span class="method-name">openDriver(Chrome, http://127.0.0.1:60628)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verifygooglepage</span>
-                <span class="method-start">188275 ms</span>
+                <span class="method-start">4844 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyfacebookpage</span>
-                <span class="method-start">198612 ms</span>
+                <span class="method-start">14594 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class before">
-                <span class="method-name">opendriver(Firefox)</span>
-                <span class="method-start">210679 ms</span>
+                <span class="method-name">openDriver(Firefox, http://127.0.0.1:60628)</span>
+                <span class="method-start">26948 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verifygooglepage</span>
-                <span class="method-start">225012 ms</span>
+                <span class="method-start">45298 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyfacebookpage</span>
-                <span class="method-start">236408 ms</span>
+                <span class="method-start">57437 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">openDriver(Edge, http://127.0.0.1:60628)</span>
+                <span class="method-start">72079 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">verifygooglepage</span>
+                <span class="method-start">77573 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyfacebookpage</span>
+                <span class="method-start">87274 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
